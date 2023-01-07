@@ -1,0 +1,30 @@
+https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/X
+
+
+#include <iostream>
+#include <algorithm>  // for std::max and std::min
+
+int main() {
+    // Read in the two intervals
+    int l1, r1, l2, r2;
+    std::cin >> l1 >> r1 >> l2 >> r2;
+
+    // Find the intersection
+    int l3 = std::max(l1, l2);  // the starting point of the intersection is the larger of the two starting points
+    int r3 = std::min(r1, r2);  // the ending point of the intersection is the smaller of the two ending points
+
+    // Check if the ranges overlap
+    if (l3 <= r3) {
+        // The ranges overlap, so there is an intersection. Print the boundaries of the intersection.
+        std::cout << l3 << " " << r3 << std::endl;
+    } else {
+        // The ranges do not overlap, so there is no intersection. Print -1.
+        std::cout << "-1" << std::endl;
+    }
+
+    return 0;
+}
+This code uses the std::max and std::min functions to find the starting and ending points of the intersection, respectively. If the starting point of the intersection is greater than the ending point, then the ranges do not overlap and there is no intersection. Otherwise, the ranges overlap and the intersection is the overlapping range.
+
+
+
